@@ -1,10 +1,10 @@
-#ifndef EX01_BUREAUCRAT_HPP
-#define EX01_BUREAUCRAT_HPP
+#ifndef EX02_BUREAUCRAT_HPP
+#define EX02_BUREAUCRAT_HPP
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -26,7 +26,7 @@ public:
     // member functions
     void incrementGrade();
     void decrementGrade();
-    void signForm(Form &form);
+    void signForm(AForm &form);
 
     // Exception classes
     class GradeTooHighException : public std::exception

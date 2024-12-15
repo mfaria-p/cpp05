@@ -1,12 +1,12 @@
-#ifndef EX01_FORM_HPP
-# define EX01_FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include "Bureaucrat.hpp"
 # include <iostream>
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
     private:
         std::string const _name;
@@ -15,11 +15,11 @@ class Form
         int const _gradeToExecute;
 
     public:
-        Form(); // default constructor
-        Form(std::string name, int gradeToSign, int gradeToExecute); // grade 1-150
-        Form(Form const &src); // copy constructor
-        ~Form(); // destructor
-        Form &operator=(Form const &form); // assignment operator
+        AForm(); // default constructor
+        AForm(std::string name, int gradeToSign, int gradeToExecute); // grade 1-150
+        AForm(AForm const &src); // copy constructor
+        ~AForm(); // destructor
+        AForm &operator=(AForm const &form); // assignment operator
 
         // getters
         std::string getName() const;
@@ -29,6 +29,7 @@ class Form
 
         // member functions
         void beSigned(Bureaucrat &bureaucrat);
+        virtual void execute(Bureaucrat const & executor) const = 0;
 
         // Exception classes
         class GradeTooHighException : public std::exception
@@ -42,8 +43,14 @@ class Form
             public:
                 virtual const char *what() const throw();
         };
+
+        class FormNotSignedException : public std::exception
+        {
+            public:
+                virtual const char *what() const throw();
+        };
 };
 
-std::ostream &operator<<(std::ostream &out, Form const &form);
+std::ostream &operator<<(std::ostream &out, AForm const &form);
 
 #endif
