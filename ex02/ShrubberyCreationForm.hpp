@@ -1,3 +1,5 @@
+#ifndef SHRUBBERY
+# define SHRUBBERY
 #include "AForm.hpp"
 #include <fstream>
 
@@ -30,3 +32,5 @@ class ShrubberyCreationForm : public AForm
     private:
         std::string _target;
 };
+
+#endif

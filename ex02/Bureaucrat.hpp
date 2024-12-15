@@ -2,6 +2,8 @@
 #define EX02_BUREAUCRAT_HPP
 
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
 #include "AForm.hpp"
 
 class AForm;
@@ -27,6 +29,8 @@ public:
     void incrementGrade();
     void decrementGrade();
     void signForm(AForm &form);
+
+    void executeForm(AForm const & form);
 
     // Exception classes
     class GradeTooHighException : public std::exception
