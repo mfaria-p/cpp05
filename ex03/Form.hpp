@@ -6,6 +6,9 @@
 
 class Bureaucrat;
 
+//By declaring the destructor as virtual, you ensure that the destructor of the 
+//derived class is called first, followed by the destructor of the base class, 
+//allowing for proper cleanup of resources.
 class Form
 {
     private:
