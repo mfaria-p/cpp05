@@ -75,7 +75,6 @@ int main()
         form = someRandomIntern.makeForm("unknown form", "Unknown");
         b1.signForm(*form);
         b1.executeForm(*form);
-        /* delete form; */
     }
     catch (const std::exception &e)
     {

@@ -9,6 +9,21 @@ int main()
         Bureaucrat b1("Alice", 1);
         std::cout << b1 << std::endl;
         b1.incrementGrade(); // This should throw GradeTooHighException
+        std::cout << b1 << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+    }
+
+    std::cout << std::endl;
+
+    try
+    {
+        Bureaucrat b5("Joana", 2);
+        std::cout << b5 << std::endl;
+        b5.incrementGrade(); // This should work
+        std::cout << b5 << std::endl;
     }
     catch (const std::exception &e)
     {
@@ -22,6 +37,21 @@ int main()
         Bureaucrat b2("Bob", 150);
         std::cout << b2 << std::endl;
         b2.decrementGrade(); // This should throw GradeTooLowException
+        std::cout << b2 << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+    }
+
+    std::cout << std::endl;
+
+    try
+    {
+        Bureaucrat b6("Meh", 149);
+        std::cout << b6 << std::endl;
+        b6.decrementGrade(); // This should work
+        std::cout << b6 << std::endl;
     }
     catch (const std::exception &e)
     {

@@ -86,3 +86,8 @@ std::ostream &operator<<(std::ostream &out, AForm const &form)
     return out;
 }
 
+void AForm::execute(Bureaucrat const & executor) const 
+{
+    (void)executor;
+}
+
